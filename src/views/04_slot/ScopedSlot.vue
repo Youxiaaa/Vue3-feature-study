@@ -12,8 +12,8 @@ const { todos } = toRefs<any>(props)
 </script>
 
 <template>
-  <div>
-    <h5>作用域插槽</h5>
+  <div class="slot--bg ">
+    <h5 class="slot--name">作用域插槽</h5>
     <p>可以傳遞數據的插槽</p>
     <ul>
       <li v-for="(todo, index) in todos" :key="todo.id">

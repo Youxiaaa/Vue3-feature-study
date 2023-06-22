@@ -4,20 +4,25 @@ import NamedSlot from './NamedSlot.vue'
 import ScopedSlot from './ScopedSlot.vue'
 import { ref } from 'vue'
 
-const todos = ref([
+interface todoType {
+  id: Number
+  title: String
+}
+
+const todos = ref<todoType[]>([
   { id: 1, title: '吃飯' },
   { id: 2, title: '睡覺' },
   { id: 3, title: '打東東' }
 ])
 
-const handlerAlert = (row) => {
-  const { title = '' } = row
+const handlerAlert = (row: todoType) => {
+  const { title } = row
   alert(`你點擊到的是${title}`)
 }
 </script>
 
 <template>
-  <div>
+  <div class="slot--display">
     <!-- 默認插槽 -->
     <DefaultSlot>
       <h3>加入到預設插槽</h3>
@@ -33,7 +38,7 @@ const handlerAlert = (row) => {
     </NamedSlot>
     <!-- 作用域插槽 -->
     <ScopedSlot :todos="todos">
-      <template #handler="{ $row, $index }">
+      <template #handler="{ $row }">
         <!-- 父組件獲取數據 -->
         <button @click="handlerAlert($row)">提示</button>
         <!-- 從父組件控制樣式 -->
@@ -42,3 +47,10 @@ const handlerAlert = (row) => {
     </ScopedSlot>
   </div>
 </template>
+
+<style>
+.slot--display {
+  display: flex;
+  gap: 10px;
+}
+</style>

@@ -16,6 +16,10 @@ const routes = [
   {
     path: '/slot',
     component: () => import('@/views/04_slot/index.vue')
+  },
+  {
+    path: '/fp',
+    component: () => import('@/views/05_FP/index.vue')
   }
 ]
 

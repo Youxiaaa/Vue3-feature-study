@@ -7,5 +7,7 @@ const count = ref<number>(0)
 </script>
 
 <template>
-  <Chile v-model:title="title" v-model:count="count" />
+  <div>
+    <Chile v-model:title="title" v-model:count="count" />
+  </div>
 </template>

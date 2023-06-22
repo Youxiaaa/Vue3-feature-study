@@ -4,6 +4,6 @@ import Attrs from '@/components/Attrs.vue'
 
 <template>
   <section>
-    <Attrs style="color: #ff4444; fontWeight: 800;" title="Attrs Title" />
+    <Attrs style="color: greenyellow; fontWeight: 800;" title="Attrs Title" />
   </section>
 </template>
