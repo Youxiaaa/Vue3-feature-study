@@ -8,13 +8,20 @@ const routes = [
   {
     path: '/useAttrs',
     component: () => import('@/views/02_useAttrs/index.vue')
+  },
+  {
+    path: '/defineExpose',
+    component: () => import('@/views/03_defineExpose_$parent/index.vue')
+  },
+  {
+    path: '/slot',
+    component: () => import('@/views/04_slot/index.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  // 下面这个 可以写成ES6的简写 routers
-  routes:routes
+  routes
 })
 
 export default router
